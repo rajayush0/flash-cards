@@ -5,33 +5,45 @@ body{
     margin: 0;
     padding: 20px;
 }
-
+/* li {
+    list-style: none;
+    display: flex;
+    margin-right: 20px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: scpace-between; 
+}
 #main-nav {
     background-color: #efddff;
     color: white;
-    padding: 10px 30px;
+    padding: 10px;
+    
+} */
+ #main-nav {
+    background-color: #efddff;
+    color: white;
+    padding: 10px;
     display: flex;
-    align-items: center;
-    justify-content: space-between; /* Logo left, links right */
+    justify-content: center; /* Center the navbar items */
 }
 
-.nav-logo {
-    font-weight: bold;
-    font-size: 1.3em;
-    color: #6c2eb7;
-}
-
-.nav-links {
+#main-nav ul {
     display: flex;
     flex-direction: row;
     padding: 0;
     margin: 0;
 }
 
-.nav-links li {
+#main-nav li {
     list-style: none;
-    margin-left: 20px;
-    color: #6c2eb7;
-    font-weight: 500;
-    cursor: pointer;
+    margin-right: 20px;
+    flex-direction: column;
+    align-items: ;
+    justify-content: space-between; /* Fixed typo: scpace-between -> space-between */
+}
+#logo{
+    height: 24px;      /* Smaller logo height */
+    width: auto;       /* Maintain aspect ratio */
+   
+    margin-right: 20px;  /* Add some space between the logo and the first item */
 }
