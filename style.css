@@ -103,6 +103,14 @@ a:hover {
     box-shadow: 0 20px 25px -5px rgba(255, 255, 255, 0.21),
                 0 8px 10px -6px rgba(255, 255, 255, 0.21);
     transition: all 0.3s ease;
+    flex-wrap: wrap;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+#card * {
+    max-width: 100%;
+    word-break: break-word;
+    font-family: "Ubuntu", sans-serif;
 }
 .content{
     text-align: center;
@@ -143,4 +151,12 @@ a:hover {
 } 
 #create-card-btn:hover {
     background-color: var(--dark-orange);
+}
+.minortext {
+    font-size: 0.8rem;
+    color: rgb(255, 255, 255);
+    margin-top: 90px;
+    margin-bottom: 0px;
+    font-family: "Bitcount Single", system-ui;
+    text-align: center;
 }
