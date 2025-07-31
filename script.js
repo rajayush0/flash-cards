@@ -1,4 +1,9 @@
-let card = document.getElementById("card");
+const card = document.getElementById("card");
+const cardInner = card.querySelector('.card-inner');
+
+card.addEventListener("click", () => {
+  card.classList.toggle("is-flipped");
+});
 
 card.addEventListener("mousemove", event => {
 
