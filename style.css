@@ -212,3 +212,44 @@ footer {
     white-space: nowrap;
     gap: 8px; 
 }
+.signup-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;      /* Full viewport height */
+    width: 100vw;           /* Full viewport width */
+    box-sizing: border-box;
+    padding-top: 0px;
+    margin-top: 20px;
+}
+#signup-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;      /* Limit the width of the form */
+    padding: 20px;         /* Add some padding */
+    background-color: var(--primary-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+.fields {
+    width: 100%;
+    margin: 10px 0;
+}
+#signup-button {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+#signup-button:hover {
+    background-color: var(--dark-orange);
+} 

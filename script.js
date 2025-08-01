@@ -5,6 +5,8 @@ card.addEventListener("click", () => {
   card.classList.toggle("is-flipped");
 });
 
+const loginButton = document.getElementById("login-button");
+const signupButton = document.getElementById("signup-button");
 card.addEventListener("mousemove", event => {
 
    const pointerX = event.clientX;
@@ -36,3 +38,8 @@ card.addEventListener("mousemove", event => {
 card.addEventListener("mouseleave", () => {
    card.style.transform = "perspective(400px) rotate3d(0, 0, 0, 0deg)";
 });
+
+signupButton.addEventListener("click", () => {
+
+   document.location.href = "signup.html";
+})
