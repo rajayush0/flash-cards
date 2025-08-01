@@ -140,7 +140,7 @@ a:hover {
 }
 #create-card-btn {
     background-color: var(--accent-color);
-    color: var(--secondary-color);
+    color: var(--primary-color);
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
@@ -148,6 +148,7 @@ a:hover {
     font-size: 1rem;
     transition: background-color 0.3s ease;
     margin-top: 30px;
+    font-family: "Ubuntu", sans-serif;
 } 
 #create-card-btn:hover {
     background-color: var(--dark-orange);
