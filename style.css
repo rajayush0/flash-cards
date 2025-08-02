@@ -58,13 +58,14 @@ body{
     flex-direction: row; 
 }
 
-#logo {
+.logo {
     height: 50px;
     width: auto;
     margin-right: 20px;
     padding-top: 10px;
     padding-bottom: 5px;
     padding-left: 10px;
+    cursor: pointer;
 }
 a {
     text-decoration: none;

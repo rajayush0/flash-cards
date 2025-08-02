@@ -5,6 +5,13 @@ card.addEventListener("click", () => {
   card.classList.toggle("is-flipped");
 });
 
+const logohome = document.getElementsByClassName("logo");
+logohome.addEventListener("click", () => {
+  window.location.href = "index.html";
+});
+     
+
+
 const loginButton = document.getElementById("login-button");
 const signupButton = document.getElementById("signup-button");
 card.addEventListener("mousemove", event => {
@@ -42,4 +49,4 @@ card.addEventListener("mouseleave", () => {
 signupButton.addEventListener("click", () => {
 
    document.location.href = "signup.html";
-})
+});
