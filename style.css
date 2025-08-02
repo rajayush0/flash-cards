@@ -253,3 +253,15 @@ footer {
 #signup-button:hover {
     background-color: var(--dark-orange);
 } 
+
+#signup-form input {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid var(--sub-textcolor);
+    border-radius: 4px;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    background-color: var(--primary-color);
+    border-color: var(--accent-color);
+}
