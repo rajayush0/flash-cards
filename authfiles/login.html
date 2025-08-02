@@ -2,8 +2,8 @@
 <html>
 <head>
     <meta charset="UTF-8" />
-    <title>signup</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>login</title>
+    <link rel="stylesheet" href="/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bitcount+Single:wght@100..900&display=swap" rel="stylesheet">
@@ -15,34 +15,33 @@
 <body>
     <nav id="main-nav">
         <ul>
-            <li><img src="logo.png" alt="flashit" id="logo"></li>
+            <li><img src="/logo.png" alt="flashit" id="logo"></li>
             <div class="nav-links">
-                <li><a href="index.html" class="navlinkc">HOME</a></li>
-                <li><a href="about.html" class="navlinkc">FLASHBOOKS</a></li>
-                <li><a href="contact.html" class="navlinkc">LOGIN</a></li>
+                <li><a href="/index.html" class="navlinkc">HOME</a></li>
+                <li><a href="/dashboard.html" class="navlinkc">FLASHBOOKS</a></li>
+                <li><a href="/authfiles/signup.html" class="navlinkc">SIGN UP</a></li>
             </div>
         </ul>
     </nav>
-    <div class ="signup-container">
-        <h1 class="herotext ">Sign Up</h1>
+    <div class ="login-container">
+        <h1 class="herotext ">LOG IN</h1>
         <div class="form-container">
-          <form id="signup-form">
+          <form id="login-form">
             <label for="username" class="fields">Username:</label>
-            <input type="text" id="signupUsername" name="username" required>
+            <input type="text" id="loginUsername" name="username" required>
             
             <label for="email" class="fields" >Email:</label>
-            <input type="email" id="signupEmail"  name="email" required>
+            <input type="email" id="loginEmail"  name="email" required>
             
             <label for="password" class="fields" >Password:</label>
-            <input type="password" id="signupPassword" name="password" required>
+            <input type="password" id="loginPassword" name="password" required>
             
-            <label for="confirm-password" class="fields">Confirm Password:</label>
-            <input type="password" id="signupConfirmPassword" name="confirm-password" required>
-
-            <button type="submit" id="signup-button">Sign Up</button>
+            <button type="submit" id="login-button">Log In</button>
           </form>
         </div>
         </div>
+         
+        
         <script src="signupscript.js"></script>
 </body>
 </html>

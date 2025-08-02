@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <title>signup</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bitcount+Single:wght@100..900&display=swap" rel="stylesheet">
@@ -15,11 +15,11 @@
 <body>
     <nav id="main-nav">
         <ul>
-            <li><img src="logo.png" alt="flashit" id="logo"></li>
+            <li><img src="/logo.png" alt="flashit" id="logo"></li>
             <div class="nav-links">
-                <li><a href="index.html" class="navlinkc">HOME</a></li>
-                <li><a href="about.html" class="navlinkc">FLASHBOOKS</a></li>
-                <li><a href="contact.html" class="navlinkc">LOGIN</a></li>
+                <li><a href="/index.html" class="navlinkc">HOME</a></li>
+                <li><a href="/dashboard.html" class="navlinkc">FLASHBOOKS</a></li>
+                <li><a href="/authfiles/login.html" class="navlinkc">LOGIN</a></li>
             </div>
         </ul>
     </nav>
@@ -38,11 +38,29 @@
             
             <label for="confirm-password" class="fields">Confirm Password:</label>
             <input type="password" id="signupConfirmPassword" name="confirm-password" required>
+            
+            <label for ="">
+                   Strength of Password: <span id="password-strength"></span>
 
+            </label>
+             <div class="power-container">
+            <div id="power-point"></div>
+             </div>
             <button type="submit" id="signup-button">Sign Up</button>
           </form>
         </div>
         </div>
+       <div class="userExist" id="userExist">
+			
+			<div class="userExist-inner" id="userExist-inner">
+                <h2 class="userExist-title" id="userExist-title">User Already Exists</h2>
+				<p class="userExist-text" id="userExist-text">We have a strict policy on tracking and spamming: we'll definitely track you, and we'll definitely spam you. To use this site, enter your name and email address and accept our ridiculous terms and conditions.</p>				
+			</div>
+            <div class="close-userExist-btn-container">
+				<button class="userExist-close-btn" id="userExist-close-btn">OK</button>
+			</div>
+       </div>
+        
         <script src="signupscript.js"></script>
 </body>
 </html>
