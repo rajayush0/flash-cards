@@ -380,3 +380,50 @@ footer {
     color: red;
     cursor: pointer;
 }
+
+.loginError {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    height: 200px;
+    width: 350px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 6px 2px #666;
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+}
+
+.loginError-inner{
+    width: 290px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.loginError-inner-loading{
+    text-align: center;
+}
+
+.close-loginError-btn-container{
+    text-align: center;
+    margin: 0px;
+}
+
+.loginError-close-btn {
+  font-size: 22px;
+  font-weight: bold;
+  background-color: var(--primary-color);
+  border: 1px solid var(--accent-color);
+  color: var(--accent-color);
+  padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.loginError-close-btn:hover,
+.loginError-close-btn:active{
+    color: red;
+    cursor: pointer;
+}

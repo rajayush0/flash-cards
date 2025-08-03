@@ -37,11 +37,22 @@
             <input type="password" id="loginPassword" name="password" required>
             
             <button type="submit" id="login-button">Log In</button>
+        
           </form>
         </div>
-        </div>
+    </div>
+
+    <div class="loginError" id="loginError">
+			
+			<div class="loginError-inner" id="loginError-inner">
+                <h2 class="loginError-title" id="loginError-title">User not found</h2>
+                <p class="loginError-text" id="loginError-text">We couldn't find a user with that username or email. Please check your credentials and try again.</p>   
+            <div class="close-loginError-btn-container">
+				<button class="loginError-close-btn" id="loginError-close-btn">OK</button>
+			</div>
+       </div>
          
         
-        <script src="signupscript.js"></script>
+        <script src="loginscript.js"></script>
 </body>
 </html>
