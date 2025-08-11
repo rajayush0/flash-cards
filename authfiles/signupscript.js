@@ -67,7 +67,7 @@ document.getElementById('signup-form').addEventListener('submit', function (e) {
     const newUser = {
         username: username,
         email: email,
-        password: password, // ⚠️ In production, always hash the password!
+        password: password, //  In production, always hash the password!
         flashcards: []
     };
     users.push(newUser);
