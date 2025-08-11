@@ -12,12 +12,12 @@ document.getElementById('login-form').addEventListener('submit', function (e) {
         localStorage.setItem('loggedInUser', JSON.stringify(loggedInUser));
         window.location.href = '/dashboard.html'; // Redirect to dashboard
     } else {
-        // Show invalid credentials message
+        // Show invalid credentials 
         const loginErrorEl = document.getElementById('loginError');
         loginErrorEl.style.display = 'inline';
-        // loginErrorEl.textContent = 'Invalid email or password!';
+        // loginErrorEl.textContent = 'Invalid email or password!
         
-        // Optional: Hide error message after 4 seconds
+        // Optional Hide error message after 4 seconds
         setTimeout(() => {
             loginErrorEl.style.display = 'none';
         }, 4000);
