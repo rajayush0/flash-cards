@@ -1,12 +1,14 @@
+//tap on logo to go to home page 
 const logohome = document.getElementById("logo");
 logohome.addEventListener("click", () => {
   window.location.href = "/index.html";
 });
 
 
-
-
 let password = document.getElementById("signupPassword");
+
+
+//checking the strength 
 let power = document.getElementById("power-point");
 password.oninput = function () {
     let point = 0;
@@ -67,7 +69,7 @@ document.getElementById('signup-form').addEventListener('submit', function (e) {
     const newUser = {
         username: username,
         email: email,
-        password: password, //  In production, always hash the password!
+        password: password, 
         flashcards: []
     };
     users.push(newUser);
@@ -77,11 +79,5 @@ document.getElementById('signup-form').addEventListener('submit', function (e) {
     localStorage.setItem('loggedInUser', JSON.stringify(newUser));
     alert("Signup successful!");
 
-    window.location.href = '/dashboard.html'; // Redirect to dashboard or home
+    window.location.href = '/flashcards/dashboard.html'; // Redirect to dashboard or home
 });
-
-const userExistEl = document.getElementById('userExist')
-
-// setTimeout(function(){
-//     userExistEl.style.display = 'inline'
-// }, 1500) 

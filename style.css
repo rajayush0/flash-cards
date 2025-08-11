@@ -71,7 +71,7 @@ a {
     text-decoration: none;
     color: rgb(175, 175, 175);
     font-family: "Bitcount Single", system-ui;
-    hover: color: rgb(255, 255, 255);
+    /* hover: color: rgb(255, 255, 255); */
 }
 a:hover {
     color: rgb(255, 255, 255);
@@ -80,7 +80,7 @@ a:hover {
     text-decoration: none;
     color: rgb(255,163,26);
     font-family: "Bitcount Single", system-ui;
-    hover: color: rgb(255, 255, 255);
+    /* hover: color: rgb(255, 255, 255); */
 }
 .navlinkc:hover {
     color: rgb(128,128,128);
