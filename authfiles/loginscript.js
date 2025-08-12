@@ -9,29 +9,42 @@ document.getElementById('login-form').addEventListener('submit', function (e) {
     const loggedInUser = users.find(user => user.email === email && user.password === password);
 
     if (loggedInUser) {
+        // Save "session"
         localStorage.setItem('loggedInUser', JSON.stringify(loggedInUser));
-        window.location.href = '/dashboard.html'; // Redirect to dashboard
+        window.location.href = '/flashcards/dashboard.html'; // Redirect to dashboard or home
     } else {
-        // Show invalid credentials 
+        // Show error popup
         const loginErrorEl = document.getElementById('loginError');
         loginErrorEl.style.display = 'inline';
-        // loginErrorEl.textContent = 'Invalid email or password!
-        
-        // Optional Hide error message after 4 seconds
+
+        const closeBtn = document.getElementById('loginError-close-btn');
+        if (closeBtn) {
+            closeBtn.onclick = () => loginErrorEl.style.display = 'none';
+        }
+
+        // Auto-hide after 4 seconds
         setTimeout(() => {
             loginErrorEl.style.display = 'none';
         }, 4000);
     }
 });
-// Redirect to signup page if not logged in
-document.getElementById("signupLink").addEventListener("click", function () {
-    window.location.href = "signup.html";
-});
-// Redirect to login page if not logged in
-document.getElementById("loginLink").addEventListener("click", function () {
-    window.location.href = "login.html";
-});
-// Redirect to dashboard if already logged in
-if (localStorage.getItem('loggedInUser')) {
-    window.location.href = '/dashboard.html';
-} ;
+
+// Optional: redirect if already logged in (only for login page)
+if (localStorage.getItem('loggedInUser') && window.location.pathname.includes("login.html")) {
+    window.location.href = '/flashcards/dashboard.html';
+}
+
+// Optional: safe link redirects
+const signupLink = document.getElementById("signupLink");
+if (signupLink) {
+    signupLink.addEventListener("click", () => {
+        window.location.href = "signup.html";
+    });
+}
+
+const loginLink = document.getElementById("loginLink");
+if (loginLink) {
+    loginLink.addEventListener("click", () => {
+        window.location.href = "login.html";
+    });
+}
