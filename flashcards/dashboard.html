@@ -27,16 +27,54 @@
         </ul>
     </nav>
 
-    <div id="fcard" class="fcards">
-
-        <div id="addcards" class="addcards">
-          
-
-        </div>
-
-
-
+    <div id="dashboard-landing" class="dashboard-landing">
+        <h1 class="herotext">Your Flashcards</h1>
+        <p class="subtext">Here are your flashcards</p>
+        <p class="startnote">Start by creating your first flashcard!</p>
     </div>
+  <section class="dashboard-hero">
+    <div class="dashboard-container">
+
+      <!-- Create Card Button -->
+      <div class="dashboard-card create-card" id="createCardBtn">
+        <div class="card-content">
+          <h2>+</h2>
+          <p>Create Card</p>
+        </div>
+      </div>
+
+      <!-- GRID of hero-style cards -->
+<section class="cards-grid" id="cardsGrid">
+<!-- CREATE CARD (same shell as hero card) -->
+<div class="card create" id="createCard">
+<div class="card-inner">
+<div class="card-front">
+<h2 class="plus">+</h2>
+<p class="label">Create Card</p>
+</div>
+<div class="card-back">
+<!-- keep empty; create tile does not flip -->
+</div>
+</div>
+</div>
+
+
+<!-- Example existing card (can be removed) -->
+<!-- <div class="card" data-card>
+<div class="card-inner">
+<div class="card-front">
+<h2 class="editable title" contenteditable="true">❓ Question</h2>
+<p class="editable body" contenteditable="true">Type the front content here…</p>
+<p class="minortext">Tap to Flip</p>
+</div>
+<div class="card-back">
+<h2 class="editable title" contenteditable="true">Answer</h2>
+<p class="editable body" contenteditable="true">Type the back content here…</p>
+<p class="minortext">Tap to Flip Back</p>
+</div>
+</div>
+</div> -->
+</section>
     <script src="/flashcards/dashboard.js"></script>
 </body>
 </html>
