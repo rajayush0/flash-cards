@@ -41,9 +41,10 @@ body {
     list-style: none;
 }
 #logo {
-    height: 50px;
+    height: 40px;
     width: auto;
     cursor: pointer;
+    padding: 5% 0;
 }
 .nav-links {
     display: flex;
@@ -254,13 +255,13 @@ font-family: "Ubuntu", sans-serif;
 }
 
 
-/* Editable fronts/backs match hero card but allow typing */
+/* Editable fronts/backs */
 .editable {
 width: 100%;
 outline: none;
 border: none;
 background: transparent;
-color: inherit;
+color: #ffffff;
 text-align: center;
 }
 .editable.title {
@@ -268,13 +269,14 @@ font-size: 1.3rem;
 font-weight: 600;
 margin-bottom: .5rem;
 font-family: "Ubuntu", sans-serif;
+padding-top: 20px;
+color: black;
 }
 
 
 .cards-grid {
   display: flex;
-  flex-wrap: wrap;         /* allow rows to wrap naturally */
-  gap: 20px;
+  flex-wrap: wrap;         
   align-items: flex-start;
   padding: 24px;
   max-width: 1400px;
@@ -303,4 +305,220 @@ font-family: "Ubuntu", sans-serif;
 /* Optional: smooth shift animation when a new card is inserted */
 .cards-grid .card {
   transition: transform 180ms ease, opacity 120ms ease;
+}
+
+
+/* delete (cross) button inside each card */
+.cards-grid .card {
+  position: relative; /* ensure absolute button positions relative to card */
+}
+
+.cards-grid .card .delete-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0,0,0,0.45);
+  color: #fff;
+  font-size: 18px;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 40;
+  transition: transform 120ms ease, background-color 120ms ease;
+}
+
+.cards-grid .card .delete-btn:hover {
+  transform: scale(1.06);
+  background: rgba(0,0,0,0.7);
+}
+
+/* Avoid showing delete on the Create tile */
+.cards-grid .card.create .delete-btn {
+  display: none;
+}
+
+
+/* delete (cross) button inside each card */
+.cards-grid .card {
+  position: relative; /* ensures absolute button positions relative to card */
+}
+
+.cards-grid .card .delete-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0,0,0,0.45);
+  color: #fff;
+  font-size: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 40;
+  transition: transform 120ms ease, background-color 120ms ease;
+}
+
+.cards-grid .card .delete-btn:hover {
+  transform: scale(1.06);
+  background: rgba(0,0,0,0.7);
+}
+
+/* hide delete on the create tile (if it exists) */
+.cards-grid .card.create .delete-btn {
+  display: none;
+}
+
+
+
+
+/* Login / Signup containers */
+.login-container,
+.signup-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100vw;
+  box-sizing: border-box;
+  padding-top: 0px;
+  margin-top: 20px;
+}
+
+/* Forms */
+#login-form,
+#signup-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  background-color: var(--primary-color);
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+
+/* Field wrapper */
+.fields {
+  width: 100%;
+  margin: 10px 0;
+}
+
+/* Buttons (login + signup) */
+#login-button,
+#signup-button {
+  background-color: var(--accent-color);
+  color: var(--primary-color);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+#login-button:hover,
+#signup-button:hover {
+  background-color: var(--dark-orange);
+}
+
+/* Inputs */
+#login-form input,
+#signup-form input {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid var(--sub-textcolor);
+  border-radius: 4px;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border-color: var(--accent-color);
+  box-sizing: border-box;
+}
+
+/* Power bar */
+.power-container {
+  background-color: #2E424D;
+  width: 100%;
+  height: 15px;
+  border-radius: 5px;
+}
+.power-container #power-point {
+  background-color: #D73F40;
+  width: 1%;
+  height: 100%;
+  border-radius: 5px;
+  transition: 0.5s;
+}
+
+/* Modal-style user exist / login error */
+.userExist,
+.loginError {
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  height: 200px;
+  width: 350px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 6px 2px #666;
+  background-color: var(--accent-color);
+  color: var(--primary-color);
+  z-index: 9999;
+}
+
+
+/* Inner content of modals */
+.userExist-inner,
+.loginError-inner {
+  width: 290px;
+  margin: 0 auto;
+  padding: 30px;
+}
+
+/* Loading / centering helper in modals */
+.userExist-inner-loading,
+.loginError-inner-loading {
+  text-align: center;
+}
+
+/* Close button containers */
+.close-userExist-btn-container,
+.close-loginError-btn-container {
+  text-align: center;
+  margin: 0px;
+}
+
+/* Close buttons */
+.userExist-close-btn,
+.loginError-close-btn {
+  font-size: 22px;
+  font-weight: bold;
+  background-color: var(--primary-color);
+  border: 1px solid var(--accent-color);
+  color: var(--accent-color);
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+.userExist-close-btn:hover,
+.userExist-close-btn:active,
+.loginError-close-btn:hover,
+.loginError-close-btn:active {
+  color: red;
+  cursor: pointer;
 }
