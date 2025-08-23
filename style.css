@@ -225,20 +225,24 @@ max-width: 1400px;
 }
 
 
-/* Make the whole card clickable without selecting text accidentally */
+
 .card {
 user-select: none;
 }
 
 
-/* Create Card: visually the same shell as .card but with a + */
+
 .card.create .card-front, .card.create .card-back {
 background: linear-gradient(to bottom right, var(--light-orange), var(--dark-orange));
 color: #fff;
 }
+
+
 .card.create .card-inner { /* no flip for the + card */
 transform: none !important;
 }
+
+
 .card.create .plus {
 font-size: 4rem;
 line-height: 1;
@@ -246,6 +250,8 @@ margin: 0;
 color: #fff;
 font-family: "Bitcount Single", system-ui;
 }
+
+
 .card.create .label {
 margin-top: .5rem;
 font-size: 1rem;
