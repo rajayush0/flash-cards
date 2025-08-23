@@ -1,3 +1,10 @@
+const createcardbtn = document.getElementById("create-card-btn");
+
+
+
+
+
+
 document.addEventListener("DOMContentLoaded", () => {
   function escapeHtml(str) {
     return String(str)
@@ -92,3 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+createcardbtn.addEventListener("click", () => {
+  window.location.href = "/flashcards/dashboard.html"
+})
