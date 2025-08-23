@@ -68,7 +68,7 @@ a:hover {
     color: var(--text-color);
 }
 #logoutButton {
-    background: #ff4d4d;
+    background: #ffae22;
     border: none;
     color: white;
     padding: 6px 12px;
@@ -77,7 +77,7 @@ a:hover {
     font-size: 0.9rem;
 }
 #logoutButton:hover {
-    background: #e63939;
+    background: rgb(143, 95, 23);
 }
 
 /* ===== Hero Card ===== */
