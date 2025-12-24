@@ -1,299 +1,355 @@
 /* ===== Global Reset ===== */
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
+
 :root {
-    --primary-color: #000000;
-    --secondary-color: #ffffff;
-    --accent-color: rgb(255, 163, 26);
-    --text-color: #ffffff;
-    --sub-textcolor: rgb(175, 175, 175);
-    --light-orange: rgb(255, 187, 85);
-    --dark-orange: rgb(185, 111, 0);
+  --primary-color: #050505;
+  --primary-gradient: radial-gradient(circle at 50% 30%, #1a1a1a 0%, #000000 100%);
+  --secondary-color: #ffffff;
+  --accent-color: rgb(255, 163, 26);
+  --text-color: #ffffff;
+  --sub-textcolor: rgb(175, 175, 175);
+  --light-orange: rgb(255, 187, 85);
+  --dark-orange: rgb(185, 111, 0);
+  --glass-bg: rgba(5, 5, 5, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.08);
 }
+
 body {
-    font-family: "Ubuntu", sans-serif;
-    background-color: var(--primary-color);
-    color: var(--sub-textcolor);
-    padding-top: 70px; /* space for fixed navbar */
-    min-height: 100vh;
+  font-family: "Ubuntu", sans-serif;
+  background: var(--primary-gradient);
+  background-color: var(--primary-color);
+  /* fallback */
+  background-attachment: fixed;
+  color: var(--sub-textcolor);
+  padding-top: 70px;
+  /* space for fixed navbar */
+  min-height: 100vh;
 }
 
 /* ===== Navigation ===== */
 #main-nav {
-    background-color: var(--primary-color);
-    color: white;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    padding: 0.5rem 1.5rem;
+  background-color: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--glass-border);
+  color: white;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  padding: 0.8rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
 }
-#main-nav ul {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-#main-nav li {
-    list-style: none;
-}
+
 #logo {
-    height: 40px;
-    width: auto;
-    cursor: pointer;
-    padding: 5% 0;
+  height: 45px;
+  width: auto;
+  cursor: pointer;
+  /* filter: drop-shadow(0 0 0px rgba(255, 163, 26, 0.3)); */
+  transition: transform 0.3s ease;
 }
+
+#logo:hover {
+  transform: scale(1.05);
+}
+
 .nav-links {
-    display: flex;
-    gap: 1.5rem;
-    align-items: center;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  list-style: none;
 }
+
 a {
-    text-decoration: none;
-    color: var(--sub-textcolor);
-    font-family: "Bitcount Single", system-ui;
-    transition: 0.2s;
+  text-decoration: none;
+  color: var(--sub-textcolor);
+  font-family: "Bitcount Single", system-ui;
+  transition: 0.2s;
 }
+
 a:hover {
-    color: var(--text-color);
+  color: var(--text-color);
 }
+
 .navlinkc {
-    color: var(--accent-color);
-    font-weight: 500;
+  color: var(--accent-color);
+  font-weight: 500;
 }
+
 .navlinkc:hover {
-    color: var(--text-color);
+  color: var(--text-color);
 }
+
 #logoutButton {
-    background: #ffae22;
-    border: none;
-    color: rgb(0, 0, 0);
-    padding: 6px 12px;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 0.9rem;
+  background: var(--accent-color);
+  border: none;
+  color: #000;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  transition: all 0.3s ease;
 }
+
 #logoutButton:hover {
-    background: rgb(143, 95, 23);
+  background: #ffb84d;
+  box-shadow: 0 0 10px rgba(255, 163, 26, 0.4);
+  transform: translateY(-1px);
 }
 
 /* ===== Hero Card ===== */
 .hero {
-    display: flex;
-    justify-content: center;
-    margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
 }
+
 .card {
-    perspective: 1000px;
-    width: 250px;
-    height: 350px;
+  perspective: 1000px;
+  width: 250px;
+  height: 350px;
 }
+
 .card-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    transition: transform 0.6s cubic-bezier(.4,2,.6,1);
-    transform-style: preserve-3d;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s cubic-bezier(.4, 2, .6, 1);
+  transform-style: preserve-3d;
 }
+
 .card.is-flipped .card-inner {
-    transform: rotateY(180deg);
+  transform: rotateY(180deg);
 }
-.card-front, .card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-radius: 16px;
-    background: linear-gradient(to bottom right, var(--light-orange), var(--dark-orange));
-    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
-    padding: 1.5rem;
-    box-sizing: border-box;
-    text-align: center;          /* ✅ center text */
-    overflow-wrap: break-word;   /* ✅ prevent overflow */
-    word-break: break-word;
-}
+
+.card-front,
 .card-back {
-    transform: rotateY(180deg);
-    color: #fff;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 16px;
+  background: linear-gradient(to bottom right, var(--light-orange), var(--dark-orange));
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  padding: 1.5rem;
+  box-sizing: border-box;
+  text-align: center;
+  /* ✅ center text */
+  overflow-wrap: break-word;
+  /* ✅ prevent overflow */
+  word-break: break-word;
 }
+
+.card-back {
+  transform: rotateY(180deg);
+  color: #fff;
+}
+
 .minortext {
-    margin-top: 0.8rem;
-    font-size: 2.0rem;
-    color: #fff;
-    font-family: "Bitcount Single", system-ui;
+  margin-top: 0.8rem;
+  font-size: 2.0rem;
+  color: #fff;
+  font-family: "Bitcount Single", system-ui;
 }
 
 .card-front h2,
 .card-back h2 {
-    font-size: 2rem;
-    color: #222;
-    margin-bottom: 1rem;
-    text-align: center;
+  font-size: 2rem;
+  color: #222;
+  margin-bottom: 1rem;
+  text-align: center;
 }
 
 .card-back h2 {
-    color: #fff;
+  color: #fff;
 }
 
 .minortext {
-    margin-top: auto;             
-    margin-bottom: 0.5rem;
-    font-size: 1.3rem;
-    color: #fff;
-    font-family: "Bitcount Single", system-ui;
-    text-align: center;
+  margin-top: auto;
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+  color: #fff;
+  font-family: "Bitcount Single", system-ui;
+  text-align: center;
 }
 
 /* ===== Content Section ===== */
 .content {
-    text-align: center;
-    margin: 2rem 1rem;
+  text-align: center;
+  margin: 2rem 1rem;
 }
+
 .herotext {
-    font-size: 3rem;
-    color: var(--text-color);
-    font-family: "Bitcount Single", system-ui;
+  font-size: 3rem;
+  color: var(--text-color);
+  font-family: "Bitcount Single", system-ui;
 }
+
 .subtext {
-    font-size: 1.2rem;
-    color: var(--accent-color);
-    margin-top: 0.5rem;
+  font-size: 1.2rem;
+  color: var(--accent-color);
+  margin-top: 0.5rem;
 }
+
 .startnote {
-    font-size: 1rem;
-    color: var(--text-color);
-    margin-top: 1.5rem;
+  font-size: 1rem;
+  color: var(--text-color);
+  margin-top: 1.5rem;
 }
+
 #create-card-btn {
-    background-color: var(--accent-color);
-    color: var(--primary-color);
-    border: none;
-    padding: 10px 20px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 1rem;
-    margin-top: 1.5rem;
-    transition: 0.3s;
+  background-color: var(--accent-color);
+  color: #000;
+  /* Contrast fix */
+  font-weight: 700;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 50px;
+  /* Pillow shape for modern look */
+  cursor: pointer;
+  font-size: 1.1rem;
+  margin-top: 1.5rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 163, 26, 0.3);
 }
+
 #create-card-btn:hover {
-    background-color: var(--dark-orange);
+  background-color: #ffb84d;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 163, 26, 0.5);
 }
 
 /* ===== Footer ===== */
 footer {
-    margin-top: auto;
-    padding: 1rem;
-    text-align: center;
-    background: #111;
-    color: #aaa;
-    font-size: 0.85rem;
+  margin-top: auto;
+  padding: 1rem;
+  text-align: center;
+  background: #111;
+  color: #aaa;
+  font-size: 0.85rem;
 }
+
 footer a {
-    color: var(--accent-color);
-    margin: 0 0.5rem;
+  color: var(--accent-color);
+  margin: 0 0.5rem;
 }
+
 footer a:hover {
-    color: var(--text-color);
+  color: var(--text-color);
 }
 
 .dashboard-landing {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
 }
 
 
 
 .cards-grid {
-display: grid;
-grid-template-columns: repeat(auto-fill, 250px); /* same width as .card */
-gap: 20px;
-justify-content: end; /* start pinning items from the right */
-align-content: start;
-padding: 24px;
-margin: 0 auto;
-max-width: 1400px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 250px);
+  /* same width as .card */
+  gap: 20px;
+  justify-content: end;
+  /* start pinning items from the right */
+  align-content: start;
+  padding: 24px;
+  margin: 0 auto;
+  max-width: 1400px;
 }
 
 
 
 .card {
-user-select: none;
+  user-select: none;
 }
 
 
 
-.card.create .card-front, .card.create .card-back {
-background: linear-gradient(to bottom right, var(--light-orange), var(--dark-orange));
-color: #fff;
+.card.create .card-front,
+.card.create .card-back {
+  background: linear-gradient(to bottom right, var(--light-orange), var(--dark-orange));
+  color: #fff;
 }
 
 
-.card.create .card-inner { /* no flip for the + card */
-transform: none !important;
+.card.create .card-inner {
+  /* no flip for the + card */
+  transform: none !important;
 }
 
 
 .card.create .plus {
-font-size: 4rem;
-line-height: 1;
-margin: 0;
-color: #fff;
-font-family: "Bitcount Single", system-ui;
+  font-size: 4rem;
+  line-height: 1;
+  margin: 0;
+  color: #fff;
+  font-family: "Bitcount Single", system-ui;
 }
 
 
 .card.create .label {
-margin-top: .5rem;
-font-size: 1rem;
-color: #fff;
-opacity: .9;
-font-family: "Ubuntu", sans-serif;
+  margin-top: .5rem;
+  font-size: 1rem;
+  color: #fff;
+  opacity: .9;
+  font-family: "Ubuntu", sans-serif;
 }
 
 
 /* Editable fronts/backs */
 .editable {
-width: 100%;
-outline: none;
-border: none;
-background: transparent;
-color: #ffffff;
-text-align: center;
+  width: 100%;
+  outline: none;
+  border: none;
+  background: transparent;
+  color: #ffffff;
+  text-align: center;
 }
+
 .editable.title {
-font-size: 1.3rem;
-font-weight: 600;
-margin-bottom: .5rem;
-font-family: "Ubuntu", sans-serif;
-padding-top: 20px;
-color: black;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: .5rem;
+  font-family: "Ubuntu", sans-serif;
+  padding-top: 20px;
+  color: black;
 }
 
 
 .cards-grid {
   display: flex;
-  flex-wrap: wrap;         
+  flex-wrap: wrap;
   align-items: flex-start;
   padding: 24px;
   max-width: 1400px;
   margin: 0 auto;
-  justify-content: flex-start; /* start filling from the left (first card) */
+  justify-content: flex-start;
+  /* start filling from the left (first card) */
 }
 
 /* Ensure each hero-style .card keeps the hero size */
 .cards-grid .card {
-  flex: 0 0 250px;   /* fixed width same as your .card */
-  height: 350px;     /* match .card height */
+  flex: 0 0 250px;
+  /* fixed width same as your .card */
+  height: 350px;
+  /* match .card height */
 }
 
 /* Create tile visuals (keeps same look as hero card) */
@@ -302,6 +358,7 @@ color: black;
   color: #fff;
   font-family: "Bitcount Single", system-ui;
 }
+
 .cards-grid .card.create .label {
   color: #fff;
   margin-top: .5rem;
@@ -316,7 +373,8 @@ color: black;
 
 /* delete (cross) button inside each card */
 .cards-grid .card {
-  position: relative; /* ensure absolute button positions relative to card */
+  position: relative;
+  /* ensure absolute button positions relative to card */
 }
 
 .cards-grid .card .delete-btn {
@@ -327,7 +385,7 @@ color: black;
   height: 34px;
   border-radius: 50%;
   border: none;
-  background: rgba(0,0,0,0.45);
+  background: rgba(0, 0, 0, 0.45);
   color: #fff;
   font-size: 18px;
   line-height: 1;
@@ -341,7 +399,7 @@ color: black;
 
 .cards-grid .card .delete-btn:hover {
   transform: scale(1.06);
-  background: rgba(0,0,0,0.7);
+  background: rgba(0, 0, 0, 0.7);
 }
 
 /* Avoid showing delete on the Create tile */
@@ -352,7 +410,8 @@ color: black;
 
 /* delete (cross) button inside each card */
 .cards-grid .card {
-  position: relative; /* ensures absolute button positions relative to card */
+  position: relative;
+  /* ensures absolute button positions relative to card */
 }
 
 .cards-grid .card .delete-btn {
@@ -363,7 +422,7 @@ color: black;
   height: 34px;
   border-radius: 50%;
   border: none;
-  background: rgba(0,0,0,0.45);
+  background: rgba(0, 0, 0, 0.45);
   color: #fff;
   font-size: 16px;
   display: inline-flex;
@@ -376,7 +435,7 @@ color: black;
 
 .cards-grid .card .delete-btn:hover {
   transform: scale(1.06);
-  background: rgba(0,0,0,0.7);
+  background: rgba(0, 0, 0, 0.7);
 }
 
 /* hide delete on the create tile (if it exists) */
@@ -413,7 +472,7 @@ color: black;
   padding: 20px;
   background-color: var(--primary-color);
   border-radius: 8px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
 }
 
 /* Field wrapper */
@@ -426,18 +485,25 @@ color: black;
 #login-button,
 #signup-button {
   background-color: var(--accent-color);
-  color: var(--primary-color);
+  color: #000;
+  font-weight: 700;
   border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
+  padding: 12px 24px;
+  border-radius: 50px;
   cursor: pointer;
   font-size: 1rem;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
   margin-top: 20px;
+  width: 100%;
+  /* Make them fill container for better mobile look */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
+
 #login-button:hover,
 #signup-button:hover {
-  background-color: var(--dark-orange);
+  background-color: #ffb84d;
+  box-shadow: 0 6px 15px rgba(255, 163, 26, 0.4);
+  transform: translateY(-2px);
 }
 
 /* Inputs */
@@ -461,6 +527,7 @@ color: black;
   height: 15px;
   border-radius: 5px;
 }
+
 .power-container #power-point {
   background-color: #D73F40;
   width: 1%;
@@ -521,6 +588,7 @@ color: black;
   padding: 5px 10px;
   border-radius: 5px;
 }
+
 .userExist-close-btn:hover,
 .userExist-close-btn:active,
 .loginError-close-btn:hover,
